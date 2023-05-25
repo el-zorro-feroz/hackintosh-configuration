@@ -16,4 +16,6 @@
 
 - Clone [SSDTTime](https://github.com/corpnewt/SSDTTime)
 
-- Create SSDT with SSDTTime and copy it to USB flash
+- Create SSDT with SSDTTime and copy it to ACPI
+
+- Add necessary Kexts and Drivers
