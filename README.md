@@ -1,0 +1,3 @@
+# Hackintosh Configuration
+
+### Coming soon
