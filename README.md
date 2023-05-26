@@ -1,21 +1,51 @@
 # Hackintosh Configuration
 
-### Roadmap
+# STILL UNDER REVIEW!
 
-- Download [OpenCorePkg](https://github.com/acidanthera/OpenCorePkg/releases) latest release
+This is my local OpenCore configuration for Ryzen 2600 & AM350
 
-- Clone [ProperTree](https://github.com/corpnewt/ProperTree)
+## Important Things
 
-- Download latest MacOS recovery with macrecovery utility
+- Used Mac Version: MacPro7,1
+- Patched for Six-core Processor
+- Disabled Secure Boot (exit code 2)
+- Enabled 4G Decoding, SVM
+- Disabled CSM, Secure Boot
 
-**_python3 ./macrecovery.py -b Mac-4B682C642B45593E -m 00000000000000000 download_**
+## Used Kexts
 
-- Copy created com.apple.recovery.boot to USB flash
+- [AMDRyzenCPUPowerManagement.kext](https://github.com/trulyspinach/SMCAMDProcessor)
+- [AppleALC.kext](https://github.com/acidanthera/AppleALC/releases)
+- [AppleMCEReporterDisabler.kext](https://github.com/Pavo-IM/OC-Gen-X/issues/118)
+- [Lilu.kext](https://github.com/acidanthera/Lilu)
+- [NVMeFix.kext](https://github.com/acidanthera/NVMeFix)
+- [RealtekRTL8111.kext](https://github.com/Mieze/RTL8111_driver_for_OS_X)
+- [RestrictEvents.kext](https://github.com/acidanthera/RestrictEvents)
+- [SMCAMDProcessor.kext](https://github.com/trulyspinach/SMCAMDProcessor)
+- [USBToolBox.kext](https://github.com/USBToolBox/tool)
+- [VirtualSMC.kext](https://github.com/acidanthera/VirtualSMC/releases)
+- [WhateverGreen.kext](https://github.com/acidanthera/WhateverGreen)
 
-- Copy x64 OpenCore EFI to USB flash
+## Used Utils
 
-- Clone [SSDTTime](https://github.com/corpnewt/SSDTTime)
+- [Gen SMBIOS](/Utils/Gen%20SMBIOS/)
+  Used to generate System ProductName, SerialNumber, etc.
 
-- Create SSDT with SSDTTime and copy it to ACPI
+- [MAC Recovery](/Utils/MAC%20Recovery/)
+  Used to generate Recovery Apple Image
 
-- Add necessary Kexts and Drivers
+  This is an example of how to download Ventura`s recovery: **_python3 ./macrecovery.py -b Mac-4B682C642B45593E -m 00000000000000000 download_**
+
+  _This image will need to be written to the Apple HFS / HFS+ partition on USB Flash_
+
+- [OC Validate](/Utils/OC%20Validate/)
+  Used to recognize errors in the [config.plist](/EFI/OC/config.plist)
+
+- [Proper Tree](/Utils/Proper%20Tree/)
+  Used to edit [config.plist](/EFI/OC/config.plist)
+
+## Using
+
+You need to generate your own System Info with [Gen SMBIOS](/Utils/Gen%20SMBIOS/) and write changes into [config.plist](/EFI/OC/config.plist)
+
+Also, you need to correctly format USB Flash & write to it [EFI](/EFI/) and generated with [MAC Recovery](/Utils/MAC%20Recovery/) image
