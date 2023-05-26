@@ -14,8 +14,9 @@ This is my local OpenCore configuration for Ryzen 2600 & AM350
 
 ## Used Kexts
 
-- [AMDRyzenCPUPowerManagement.kext](https://github.com/trulyspinach/SMCAMDProcessor)
 - [AppleALC.kext](https://github.com/acidanthera/AppleALC/releases)
+**_Enable only after installing OSX_**
+- [AMDRyzenCPUPowerManagement.kext](https://github.com/trulyspinach/SMCAMDProcessor)
 - [AppleMCEReporterDisabler.kext](https://github.com/Pavo-IM/OC-Gen-X/issues/118)
 - [Lilu.kext](https://github.com/acidanthera/Lilu)
 - [NVMeFix.kext](https://github.com/acidanthera/NVMeFix)
@@ -23,6 +24,7 @@ This is my local OpenCore configuration for Ryzen 2600 & AM350
 - [RestrictEvents.kext](https://github.com/acidanthera/RestrictEvents)
 - [SMCAMDProcessor.kext](https://github.com/trulyspinach/SMCAMDProcessor)
 - [USBToolBox.kext](https://github.com/USBToolBox/tool)
+**_Replace to USBMap.kext after mapping_**
 - [VirtualSMC.kext](https://github.com/acidanthera/VirtualSMC/releases)
 - [WhateverGreen.kext](https://github.com/acidanthera/WhateverGreen)
 
@@ -43,6 +45,9 @@ This is my local OpenCore configuration for Ryzen 2600 & AM350
 
 - [Proper Tree](/Utils/Proper%20Tree/)
   Used to edit [config.plist](/EFI/OC/config.plist)
+
+- [USBMap](/Utils/USBMap/)
+  Used to create kext for USB Ports fix
 
 ## Using
 
